@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Github, Linkedin, Mail, Code2, Palette, Rocket, ArrowDown, ExternalLink } from 'lucide-react';
+import profileImage from '../assets/profile.jpg';
 
 export default function App() {
   const { scrollY } = useScroll();
@@ -80,7 +81,7 @@ export default function App() {
           >
             <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 p-1">
               <img 
-                src="src/assets/profile.jpg" 
+                src={profileImage} 
                 alt="Pawan"
                 className="w-full h-full rounded-full object-cover"
               />
