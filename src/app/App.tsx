@@ -6,7 +6,6 @@ export default function App() {
   const { scrollY } = useScroll();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const backgroundY = useTransform(scrollY, [0, 1000], ['0%', '50%']);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
@@ -19,21 +18,21 @@ export default function App() {
 
   const projects = [
     {
-      title: "AI Portfolio Generator",
-      description: "An intelligent tool that creates stunning portfolios using machine learning",
-      tech: ["React", "TypeScript", "TensorFlow"],
+      title: "Database Management System",
+      description: "skills in designing and implementing efficient database solutions",
+      tech: ["My Sql", "FireBase", "Sqlite",'MongoDB'],   
       gradient: "from-purple-500 to-pink-500"
     },
     {
-      title: "Cloud Dashboard",
-      description: "Real-time analytics platform with beautiful data visualizations",
-      tech: ["Next.js", "D3.js", "Node.js"],
+      title: "Website Development",
+      description: "website development using HTML, CSS, and JavaScript",
+      tech: ["HTML", "Css", "JavaScript"],
       gradient: "from-cyan-500 to-blue-500"
     },
     {
-      title: "Design System Pro",
-      description: "Component library with 100+ customizable UI elements",
-      tech: ["React", "Tailwind", "Storybook"],
+      title: "Version Control system",
+      description: "experience with Git and other version control tools",
+      tech: ["Git", "GitHub", "Bitbucket"],
       gradient: "from-orange-500 to-red-500"
     }
   ];
@@ -45,14 +44,11 @@ export default function App() {
   ];
 
   return (
-    <div className="size-full overflow-y-auto bg-black text-white">
-      {/* Animated background gradient */}
-      <motion.div
-        className="fixed inset-0 opacity-30 pointer-events-none"
-        style={{ y: backgroundY }}
-      >
+    <div className="relative min-h-screen bg-black text-white">
+      {/* Animated background gradient - fixed without parallax */}
+      <div className="fixed inset-0 opacity-30 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-500" />
-      </motion.div>
+      </div>
 
       {/* Mouse follower effect */}
       <div
@@ -83,9 +79,11 @@ export default function App() {
             className="mb-8 inline-block"
           >
             <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 p-1">
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-5xl">
-                ✨
-              </div>
+              <img 
+                src="src/assets/profile.jpg" 
+                alt="Pawan"
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
           </motion.div>
 
@@ -95,7 +93,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Creative Developer
+            Pawan
           </motion.h1>
 
           <motion.p
@@ -113,17 +111,34 @@ export default function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            {[Github, Linkedin, Mail].map((Icon, i) => (
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500 transition-colors"
-              >
-                <Icon className="w-6 h-6" />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://github.com/Pawan7636"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500 transition-colors"
+            >
+              <Github className="w-6 h-6" />
+            </motion.a>
+            <motion.a
+              href=" https://www.linkedin.com/in/pawan-78806932b"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500 transition-colors"
+            >
+              <Linkedin className="w-6 h-6" />
+            </motion.a>
+            <motion.a
+              href="mailto:pawan.2024.ug24@iilm.edu"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-4 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500 transition-colors"
+            >
+              <Mail className="w-6 h-6" />
+            </motion.a>
           </motion.div>
         </motion.div>
 
@@ -157,8 +172,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-                className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500 transition-all"
+                className="p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
               >
                 <skill.icon className="w-12 h-12 mb-4 text-purple-400" />
                 <h3 className="text-2xl mb-2">{skill.name}</h3>
@@ -174,9 +188,9 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            I'm a passionate developer and designer who loves creating immersive digital experiences.
-            With expertise in modern web technologies and a keen eye for aesthetics,
-            I transform ideas into reality.
+            Hello, my name is Pawan. 
+            I am a beginner in web development with basic knowledge of HTML, CSS, and JavaScript. 
+            I am very interested in building websites and learning new technologies. I am a quick learner, hardworking, and always eager to improve my skills. I am looking for an opportunity where I can gain practical experience and contribute to the team.
           </motion.p>
         </div>
       </section>
@@ -190,7 +204,7 @@ export default function App() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Featured Projects
+            Skills
           </motion.h2>
 
           <div className="space-y-8">
@@ -231,50 +245,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="relative py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            className="text-5xl md:text-6xl mb-8"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Let's Create Together
-          </motion.h2>
-
-          <motion.p
-            className="text-xl text-gray-400 mb-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Have an exciting project in mind? Let's collaborate and build something amazing.
-          </motion.p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-4 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            Get In Touch
-          </motion.button>
-        </div>
-
-        <motion.div
-          className="text-center mt-32 text-gray-600"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          © 2026 Creative Developer. All rights reserved.
-        </motion.div>
-      </section>
+      
     </div>
   );
 }
