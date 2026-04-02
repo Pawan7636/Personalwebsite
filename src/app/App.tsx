@@ -103,7 +103,7 @@ export default function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Building beautiful digital experiences with code & creativity
+            Passionate Web Developer eager to learn and build real-world projects
           </motion.p>
 
           <motion.div
